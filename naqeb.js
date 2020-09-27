@@ -4,7 +4,7 @@ const invites = {};
 const wait = require("util").promisify(setTimeout);
 const moment = require("moment");
 const fs = require("fs");
-var prefix = "N!";
+var prefix = "Z/";
 
 
 
