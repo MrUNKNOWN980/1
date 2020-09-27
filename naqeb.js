@@ -640,11 +640,11 @@ naqeb.on("message", zaid => {
         ` ${Date.now() - zaid.createdTimestamp}` + "__ __ ",
         true
       )
-      .addField("**__سێرڤەرەکان__** : ", `→ ${naqeb.guilds.size}`, true)
-      .addField("**__چەناڵەکەن__** : ", `→ ${naqeb.channels.size} `, true)
-      .addField("**__میمبەرەکان__** : ", `→ ${naqeb.users.size} `, true)
-      .addField("**__ناوی بۆتەکە__** : ", `→ ${naqeb.user.tag} `, true)
-      .addField("**دروست کەری بۆتەکە** : ", `→ nawe xot lera dane `)
+      .addField("**__سێرڤەرەکان__** : ", `→ ${RUOSER.guilds.size}`, true)
+      .addField("**__چەناڵەکەن__** : ", `→ ${RUOSER.channels.size} `, true)
+      .addField("**__میمبەرەکان__** : ", `→ ${RUOSER.users.size} `, true)
+      .addField("**__ناوی بۆتەکە__** : ", `→ ${RUOSER.user.tag} `, true)
+      .addField("**دروست کەری بۆتەکە** : ", `→ RUOSER`)
 
       .setImage("")//rmek ba fle xot
       .setFooter(zaid.author.username, zaid.author.avatarURL);
@@ -724,7 +724,7 @@ naqeb.on("message", message => {
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
       .setColor("RANDOM")
-      .addField(" سەپۆرتی سیرڤەر بەکەن", " linke server ");
+      .addField(" سەپۆرتی سیرڤەر بەکەن", " https://discord.gg/BrBGpWZ ");
 
     message.channel.sendEmbed(embed);
   }
@@ -761,4 +761,4 @@ naqeb.on("message", message => {
   }
 });
 
-naqeb.login("token bot");
+naqeb.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.EtStLAqgevvNvYmJqiqr_ilSoHg");
