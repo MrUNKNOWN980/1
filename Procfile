@@ -1,1 +1,1 @@
-worker: node naqeb.js
+worker: node server.js
