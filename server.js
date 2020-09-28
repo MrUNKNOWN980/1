@@ -17,14 +17,14 @@ const bannedwords = ["@here", "@everyone"];
 
 const ytdl = require("ytdl-core");
 
-const prefix = "a!";
+const prefix = "z!";
 
 const queue = new Map();
 
 bot.on("ready", () => console.log("🤖Ready Bot In Online🤖"));
 
 bot.on("message", message => {
-  if (message.content === "k!help") {
+  if (message.content === "z!help") {
     const embed = new Discord.RichEmbed()
       .setColor("BLACK")
        .setFooter(message.author.username, message.author.displayAvatarURL)
@@ -34,21 +34,26 @@ bot.on("message", message => {
 
 **The prefix for the bot is: a!**
 
-** k!antibots on **
+** z!antibots on **
 
-** k!antibots off **
+** z!antibots off **
 
-** k!anti ban [1 to 3] **
+** z!anti ban [1 to 3] **
 
-** k!anti kick [1 to 3] **
+** z!anti kick [1 to 3] **
 
-** k!anti role [1 to 3] **
+** z!anti role [1 to 3] **
 
-** k!anti channel[1 to 3] **
+** z!anti channel[1 to 3] **
 
-** k!anti time **
+** z!anti time **
 
-** k!inv **
+** z!inv **
+
+** z!lock **
+
+** z!unlock **
+
 `);
     message.channel.sendEmbed(embed);
   }
@@ -68,7 +73,7 @@ bot.on("ready", () => {
 
 
 bot.on("ready", () => {
-  bot.user.setActivity("k!help It's time to secure your server!", {
+  bot.user.setActivity("z!help It's time to secure your server!", {
     type: "PLAYING"
   });
   bot.user.setStatus();
@@ -331,7 +336,7 @@ bot.on("roleDelete", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} ‎ he made alot of roles**`
+            `**⇏ | ${entry.username}  he made alot of roles**`
           )
         );
       anti[channel.guild.id + entry.id].actions = "0";
@@ -671,25 +676,53 @@ fs.writeFile("./antibot.json", JSON.stringify(antibots), err => {
     });
 });
 //////===============linke bot========================\\\\\
-bot.on("message", message => {
-  if (message.content === "a!inv") {
-    if (!message.channel.guild)
-      return message.reply(
-        "**Please Do not type bot commands in bot private chat**"
-      );
-    let embed = new Discord.RichEmbed()
-      .setColor("BLACK")
-      .setTitle("• BOT INVITE •")
+bot.on("message", async message => {
+  if (message.content.startsWith(prefix + "invite")) {
+    let invite = new Discord.RichEmbed()
+      .setColor("#000000")
+      .setFooter(message.author.username, message.author.displayAvatarURL)
+      .setThumbnail( message.author.displayAvatarURL)
+      .setTitle(
+        "**__CLICK HERE TO  LINK BOT__**"
+      )
       .setURL(
-        "https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8"
-      ) // Type Your Link here after ''
-       .setFooter(message.author.username, message.author.displayAvatarURL)
-     .setThumbnail(message.author.displayAvatarURL)
-    message.channel.sendEmbed(embed);
+        `https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&scope=bot&permissions=8`
+      );
+    message.channel.sendEmbed(invite);
   }
 });
+bot.on('message', message => { 
+      if(message.content === prefix + "lock") {
+      if(!message.channel.guild) return;
+      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('sorry you dont have permissions');
+             message.channel.overwritePermissions(message.guild.id, {
+             SEND_MESSAGES: false
+ })
+         message.react('🔒')     
+        message.channel.send(':lock: | Locked this channel.') 
+
+      
+      }
+});
+bot.on('message', message => { 
+      if(message.content === prefix + "unlock") {
+      if(!message.channel.guild) return;
+      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('sorry you dont have permissions');
+             message.channel.overwritePermissions(message.guild.id, {
+             SEND_MESSAGES: true
+ })
+         message.react('🔓')     
+        message.channel.send(':unlock: | Unlocked this channel.') 
+
+      
+      }
+});
+bot.on("message", message => {
+if(message.content.startsWith(prefix + 'servers')) {
+message.reply(`I am in  ${bot.guilds.size} Servers , Users  ${bot.users.size} `);
 
 
+}});
 
 
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
