@@ -24,34 +24,31 @@ const queue = new Map();
 bot.on("ready", () => console.log("🤖Ready Bot In Online🤖"));
 
 bot.on("message", message => {
-  if (message.content === "a!help") {
+  if (message.content === "k!help") {
     const embed = new Discord.RichEmbed()
       .setColor("BLACK")
-      .setImage(
-        "https://images-ext-2.discordapp.net/external/u9BEQ5MkPfUPyg1rEQIOUuSclkJQQ4VGJDduOS3LJCg/https/media.discordapp.net/attachments/732894894280146984/732899108712611860/image0.gif"
-      )
-      .setThumbnail(
-        "https://images-ext-2.discordapp.net/external/u9BEQ5MkPfUPyg1rEQIOUuSclkJQQ4VGJDduOS3LJCg/https/media.discordapp.net/attachments/732894894280146984/732899108712611860/image0.gif"
-      ).setDescription(`**COMAND HELP MENU**
+       .setFooter(message.author.username, message.author.displayAvatarURL)
+     .setThumbnail(message.author.displayAvatarURL)
+      .setDescription(`**COMAND HELP MENU**
 
 
 **The prefix for the bot is: a!**
 
-** a!antibots on **
+** k!antibots on **
 
-** a!antibots off **
+** k!antibots off **
 
-** a!anti ban [1 to 3] **
+** k!anti ban [1 to 3] **
 
-** a!anti kick [1 to 3] **
+** k!anti kick [1 to 3] **
 
-** a!anti role [1 to 3] **
+** k!anti role [1 to 3] **
 
-** a!anti channel[1 to 3] **
+** k!anti channel[1 to 3] **
 
-** a!anti time **
+** k!anti time **
 
-** a!inv **
+** k!inv **
 `);
     message.channel.sendEmbed(embed);
   }
@@ -71,7 +68,7 @@ bot.on("ready", () => {
 
 
 bot.on("ready", () => {
-  bot.user.setActivity("a!help It's time to secure your server!", {
+  bot.user.setActivity("k!help It's time to secure your server!", {
     type: "PLAYING"
   });
   bot.user.setStatus();
@@ -684,50 +681,15 @@ bot.on("message", message => {
       .setColor("BLACK")
       .setTitle("• BOT INVITE •")
       .setURL(
-        "https://discord.com/api/oauth2/authorize?client_id=736194972436529202&permissions=8&scope=bot"
+        "https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8"
       ) // Type Your Link here after ''
-      .setThumbnail(
-        "https://images-ext-2.discordapp.net/external/u9BEQ5MkPfUPyg1rEQIOUuSclkJQQ4VGJDduOS3LJCg/https/media.discordapp.net/attachments/732894894280146984/732899108712611860/image0.gif"
-      )
-
-      .setFooter("Anti Bot#3040", message.author.avatarURL);
+       .setFooter(message.author.username, message.author.displayAvatarURL)
+     .setThumbnail(message.author.displayAvatarURL)
     message.channel.sendEmbed(embed);
   }
 });
 
-/////////////ABOUT///////////////////
 
-bot.on("message", async console => {
-  const mm = console.mentions.members.first() || console.member;
-  if (console.content === "a!about") {
-    var user = console.guild.member(
-      console.mentions.members.first() || console.author
-    );
 
-    var embed = new Discord.RichEmbed()
 
-      .setColor("BLACK")
-
-      .setTitle("{            **Bot Info**            }")
-
-      .addField("**Name** ", "Anti Bot#3040")
-
-      .addField("**ID** ", "667309579675369482")
-
-      .addField("**Guilds** ", `${bot.guilds.size}`)
-
-      .addField("**Users** ", `${bot.users.size}`)
-
-      .addField("**Owner Bot** ", "DarkMan#0001")
-
-      .setThumbnail(
-        "https://images-ext-2.discordapp.net/external/u9BEQ5MkPfUPyg1rEQIOUuSclkJQQ4VGJDduOS3LJCg/https/media.discordapp.net/attachments/732894894280146984/732899108712611860/image0.gif"
-      );
-
-    console.channel.send(embed);
-
-    console;
-  }
-});
-//////============token================////
-bot.login("NzM2MTk0OTcyNDM2NTI5MjAy.XxrQ_w.0TG9jNmN9fq7K9V5JZrbitLwjYk");
+bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
