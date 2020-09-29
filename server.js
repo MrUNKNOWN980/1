@@ -13,7 +13,6 @@ const fs = require("fs");
 
 const request = require("request");
 
-const bannedwords = ["@here", "@everyone"];
 
 const ytdl = require("ytdl-core");
 
@@ -56,7 +55,6 @@ bot.on("message", message => {
 
 ** z!bot **
 
-** z!server **
 `);
     message.channel.sendEmbed(embed);
   }
@@ -92,24 +90,6 @@ bot.on('message', message => {
       .setTimestamp();
     })
 }
-});
-bot.on('message', function(msg) {
-    if(msg.content.startsWith (prefix+'server')) {
-      let embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setThumbnail(msg.guild.iconURL)
-      .setTitle(` ${msg.guild.name}`)
-      .addField('`شوێنی سێرڤەر`:earth_africa:',`[${msg.guild.region}]`,true)
-      .addField('`ژمارەی رۆڵەكان`:closed_lock_with_key: ',`[${msg.guild.roles.size}]`,true)
-      .addField('`ژمارەی مێمبەرەكان`:busts_in_silhouette:',`[${msg.guild.memberCount}]`,true)
-      .addField('`ژمارەی ئۆنڵاینەكان`:green_heart:',`[${msg.guild.members.filter(m=>m.presence.status == 'online').size}]`,true)
-      .addField('`ژمارەی ژوری نوسینەكان`:speech_balloon: ',`[${msg.guild.channels.filter(m => m.type === 'text').size}]`,true)
-      .addField('`ژمارەی ڤۆیسەكان`:speaking_head:',`[${msg.guild.channels.filter(m => m.type === 'voice').size}]`,true)
-      .addField('`ئۆنەری سێرڤەر`:crown: ',`**${msg.guild.owner}**`,true)
-      .addField('`ئایدی سێرڤەر`:id: ',`**${msg.guild.id}**`,true)
-      .addField('`كاتی دروست كردنی سێرڤەر`:date:',msg.guild.createdAt.toLocaleString())
-      msg.channel.send({embed:embed})
-    }
 });
 
 bot.on("ready", () => {
