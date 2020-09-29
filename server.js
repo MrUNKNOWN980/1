@@ -54,9 +54,63 @@ bot.on("message", message => {
 
 ** z!unlock **
 
+** z!bot **
+
+** z!server **
 `);
     message.channel.sendEmbed(embed);
   }
+});
+bot.on('message', message => {
+
+if(message.content.includes("@everyone")){
+if(!message.member.hasPermission('MANAGE_MESSAGES')){
+message.delete(); 
+message.reply("you cant send everyone message")
+}
+
+}
+
+});
+
+bot.on('message', message => {
+    if (message.content.startsWith(prefix+"bot")) {
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setThumbnail(bot.user.avatarURL)
+            .setColor('RANDOM')
+            .setTitle('``KURD BOT`` ')
+            .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``servers``', [bot.guilds.size], true)
+            .addField('``channels``' , `[ ${bot.channels.size} ]` , true)
+            .addField('``Users``' ,`[ ${bot.users.size} ]` , true)
+           .addField("**Bot Owner** :  ", `» <@735510419577372743>`, true)
+			      .addField("**Bot co Owner** :  ", `» <@536132284613656582>`, true)
+       .addField("**Bot admin** :  ", `» <@760272814481211402>`, true)
+      .addField('``My Prefix``' , `[ ${prefix} ]` , true)
+			      .addField('``My Language``' , `[ Java Script ]` , true)
+			       .setFooter(`${bot.user.username}`, bot.user.avatarURL)
+      .setTimestamp();
+    })
+}
+});
+bot.on('message', function(msg) {
+    if(msg.content.startsWith (prefix+'server')) {
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(msg.guild.iconURL)
+      .setTitle(` ${msg.guild.name}`)
+      .addField('`شوێنی سێرڤەر`:earth_africa:',`[${msg.guild.region}]`,true)
+      .addField('`ژمارەی رۆڵەكان`:closed_lock_with_key: ',`[${msg.guild.roles.size}]`,true)
+      .addField('`ژمارەی مێمبەرەكان`:busts_in_silhouette:',`[${msg.guild.memberCount}]`,true)
+      .addField('`ژمارەی ئۆنڵاینەكان`:green_heart:',`[${msg.guild.members.filter(m=>m.presence.status == 'online').size}]`,true)
+      .addField('`ژمارەی ژوری نوسینەكان`:speech_balloon: ',`[${msg.guild.channels.filter(m => m.type === 'text').size}]`,true)
+      .addField('`ژمارەی ڤۆیسەكان`:speaking_head:',`[${msg.guild.channels.filter(m => m.type === 'voice').size}]`,true)
+      .addField('`ئۆنەری سێرڤەر`:crown: ',`**${msg.guild.owner}**`,true)
+      .addField('`ئایدی سێرڤەر`:id: ',`**${msg.guild.id}**`,true)
+      .addField('`كاتی دروست كردنی سێرڤەر`:date:',msg.guild.createdAt.toLocaleString())
+      msg.channel.send({embed:embed})
+    }
 });
 
 bot.on("ready", () => {
