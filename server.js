@@ -31,7 +31,7 @@ bot.on("message", message => {
       .setDescription(`**COMAND HELP MENU**
 
 
-**The prefix for the bot is: a!**
+**The prefix for the bot is: z! **
 
 ** z!antibots on **
 
@@ -47,7 +47,7 @@ bot.on("message", message => {
 
 ** z!anti time **
 
-** z!inv **
+** z!invite **
 
 ** z!lock **
 
@@ -769,10 +769,15 @@ bot.on('message', message => {
 });
 bot.on("message", message => {
 if(message.content.startsWith(prefix + 'servers')) {
-message.reply(`I am in  ${bot.guilds.size} Servers , Users  ${bot.users.size} `);
-
-
-}});
-
+message.reply(`I am in  ${bot.guilds.size} Servers , Users  ${bot.users.size} `// ======== { • anti everyone • }======== //
+client.on("message", msg => {
+  if (msg.author.bot) return;
+  if (msg.content.includes("@everyone")) {
+    if (msg.member.hasPermission("MENTION_EVERYONE")) return;
+    if (!msg.channel.guild) return;
+    msg.delete();
+    msg.reply("```يفريوه ن ليبه يت با ند ده كريت .```");
+  }
+});
 
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
