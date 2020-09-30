@@ -768,4 +768,20 @@ bot.on('message', message => {
       }
 });
 
+client.on('message', message => {
+
+if(message.content.includes("@everyone")){
+
+if(!message.member.hasPermission('ADMINISTRATOR')){
+
+message.delete(); 
+
+message.reply("__**تۆ ناتوانیت ئێڤریوەن لێبدەیت **__| :lock:")
+
+}
+
+}
+
+});
+
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
