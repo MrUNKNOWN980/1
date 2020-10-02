@@ -768,29 +768,5 @@ bot.on('message', message => {
       }
 });
 
-client.on('message', message => {
- 
-if(message.content.includes("@everyone")){
-if(!message.member.hasPermission('KICK_MEMBERS')){
-message.delete(); 
-message.reply("ئێڤری وەن لێمەدە دڵم")
-}
- 
-}
- 
-});
- 
- 
-client.on('message', message => {
- 
-if(message.content.includes("@everyone@everyone")){
-if(!message.member.hasPermission('KICK_MEMBERS')){
-message.delete(); 
-message.reply("you can't use everyone")
-}
- 
-}
- 
-});   
 
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
