@@ -113,6 +113,17 @@ bot.on("ready", () => {
   console.log(`Logged in as ${bot.user.tag}!`);
 });
 
+client.on("typingStart", (ch, user) => {
+  if (user.presence.status === "offline") {
+    ch.send(
+      `${user}(:    دەستەکەو کەشف بوو ئەوە خۆت ۆفلاین ئەکەی خێرا خۆت ۆنلاین کە`
+    ) //lera chiw pe xosha bele
+      .then(msg => {
+        msg.delete(10000);
+      });
+  }
+});
+
 bot.on("ready", () => {
   console.log(`[!]-------------------------------------[!]`);
   console.log(`Display Name : ${bot.user.username}`);
@@ -768,15 +779,5 @@ bot.on('message', message => {
       }
 });
 
-client.on("typingStart", (ch, user) => {
-  if (user.presence.status === "offline") {
-    ch.send(
-      `${user}(:    دەستەکەو کەشف بوو ئەوە خۆت ۆفلاین ئەکەی خێرا خۆت ۆنلاین کە`
-    ) //lera chiw pe xosha bele
-      .then(msg => {
-        msg.delete(10000);
-      });
-  }
-});
 
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
