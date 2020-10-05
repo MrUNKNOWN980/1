@@ -43,6 +43,10 @@ bot.on("message", message => {
 
 ** z!anti role [1 to 3] **
 
+** z!anti rolelD [1 to 2] **
+
+** z!anti roleD [1 to 3 ] **
+
 ** z!anti channel[1 to 3] **
 
 ** z!anti time **
@@ -54,6 +58,8 @@ bot.on("message", message => {
 ** z!unlock **
 
 ** z!bot **
+
+** z!no spam @ everyone 
 
 `);
     message.channel.sendEmbed(embed);
@@ -768,5 +774,19 @@ bot.on('message', message => {
       }
 });
 
+client.on('message', message => {
+if (!message.guild) return;
+if (message.content === 'wara') {
+if (message.member.voiceChannel) {
+message.member.voiceChannel.join()
+.then(connection => { 
+message.reply('basha 7ayattm awa dem');
+})
+.catch(console.log);
+} else {
+message.reply('bcho zhwrek inja bakare bena');
+}
+}
+});
 
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
