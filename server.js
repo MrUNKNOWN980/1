@@ -774,19 +774,4 @@ bot.on('message', message => {
       }
 });
 
-client.on('message', message => {
-if (!message.guild) return;
-if (message.content === 'wara') {
-if (message.member.voiceChannel) {
-message.member.voiceChannel.join()
-.then(connection => { 
-message.reply('basha 7ayattm awa dem');
-})
-.catch(console.log);
-} else {
-message.reply('bcho zhwrek inja bakare bena');
-}
-}
-});
-
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
