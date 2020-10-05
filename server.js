@@ -49,6 +49,8 @@ bot.on("message", message => {
 
 ** z!anti channel[1 to 3] **
 
+** z!no spam [ @ everyone ] **
+
 ** z!anti time **
 
 ** z!invite **
@@ -58,8 +60,6 @@ bot.on("message", message => {
 ** z!unlock **
 
 ** z!bot **
-
-** z!no spam @ everyone 
 
 `);
     message.channel.sendEmbed(embed);
