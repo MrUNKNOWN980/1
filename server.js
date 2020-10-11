@@ -41,11 +41,9 @@ bot.on("message", message => {
 
 ** z!anti kick [1 to 3] **
 
-** z!anti role [1 to 3] **
+** z!anti roleC [1 to 3] **
 
 ** z!anti rolelD [1 to 2] **
-
-** z!anti roleD [1 to 3 ] **
 
 ** z!anti channel[1 to 3] **
 
@@ -53,15 +51,13 @@ bot.on("message", message => {
 
 ** z!anti time **
 
+** z!server **
 ** z!invite **
-
 ** z!lock **
-
 ** z!unlock **
-
+** z!clear **
 ** z!bot **
-
-`);
+**[support](https://discord.gg/t5vzjFp)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     message.channel.sendEmbed(embed);
   }
 });
@@ -772,6 +768,89 @@ bot.on('message', message => {
 
       
       }
+});
+/////////clear////
+bot.on("message", message => {
+
+ 
+
+            var args = message.content.substring(prefix.length).split(" ");
+
+            if (message.content.startsWith(prefix + "clear")) {
+
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');
+
+        var msg;
+
+        msg = parseInt();
+
+     
+
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+
+      message.channel.sendMessage("", {embed: {
+
+        title: "🇨 🇱 🇪 🇦 🇷  ",
+
+        color: 0x06DF00,
+
+      
+
+        footer: {
+
+          text: "🇨 🇭 🇦 🇹  "
+
+        }
+
+      }}).then(msg => {msg.delete(3000)});
+
+                          }
+
+ 
+
+     
+
+});
+// ======== { • settings • }======== //
+////////////////mrfix
+bot.on("message", message => {
+  if (message.content === prefix + "settings") {
+    if (!message.member.hasPermission("Ownership"))
+      if (!message.channel.guild) return;
+    if (message.content < 1023) return;
+    const mrfix = new Discord.RichEmbed()
+      .setAuthor(bot.user.username, bot.user.avatarURL)
+      .setThumbnail(bot.user.avatarURL).setDescription(`AntiBan
+Enabled:🟢 
+Maximum Ban : ${config[message.guild.id].banLimit}
+-
+AntiKick
+Enabled:🟢 
+Maximum Kick : ${config[message.guild.id].kickLimits}
+-
+AntiChannelD
+Enabled:🟢 
+Maximum Delete : ${config[message.guild.id].chaDelLimit}
+-
+AntiChannelC
+Enabled:🟢 
+Maximum Create : ${config[message.guild.id].chaCrLimit}
+-
+AntiRoleD
+Enabled:🟢 
+Maximum Delete : ${config[message.guild.id].roleDelLimit}
+-
+AntiRoleC
+Enabled:🟢 
+Maximum Create : ${config[message.guild.id].roleCrLimits}
+-
+AntiTime
+Enabled:🟢 
+Maximum Time : ${config[message.guild.id].time}
+`);
+
+    message.channel.sendEmbed(mrfix);
+  }
 });
 
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
