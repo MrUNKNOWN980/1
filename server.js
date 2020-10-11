@@ -823,4 +823,4 @@ bot.on("message", msg => {
     msg.reply("```You cant send here .```");
   }
 });
-bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
+bot.login("OKJo7Fz2ZG0kEEb_v2CytM8w-XW5Vzdz");
