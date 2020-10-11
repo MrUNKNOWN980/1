@@ -34,21 +34,13 @@ bot.on("message", message => {
 **The prefix for the bot is: z! **
 
 ** z!antibots on **
-
 ** z!antibots off **
-
 ** z!anti ban [1 to 3] **
-
 ** z!anti kick [1 to 3] **
-
 ** z!anti roleC [1 to 3] **
-
 ** z!anti rolelD [1 to 2] **
-
 ** z!anti channel[1 to 3] **
-
 ** z!anti time **
-
 ** z!server **
 ** z!invite **
 ** z!lock **
