@@ -47,7 +47,7 @@ bot.on("message", message => {
 ** z!unlock **
 ** z!clear **
 ** z!bot **
-** no spam [ @ everyone @here ] **
+** no spam [ @ everyone @ here ] **
 **[support](https://discord.gg/t5vzjFp)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     message.channel.sendEmbed(embed);
   }
