@@ -47,8 +47,6 @@ bot.on("message", message => {
 
 ** z!anti channel[1 to 3] **
 
-** z!no spam [ @ everyone ] **
-
 ** z!anti time **
 
 ** z!server **
@@ -57,6 +55,7 @@ bot.on("message", message => {
 ** z!unlock **
 ** z!clear **
 ** z!bot **
+** no spam [ @ everyone @here ] **
 **[support](https://discord.gg/t5vzjFp)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     message.channel.sendEmbed(embed);
   }
@@ -811,46 +810,25 @@ bot.on("message", message => {
      
 
 });
-// ======== { • settings • }======== //
-////////////////mrfix
-bot.on("message", message => {
-  if (message.content === prefix + "settings") {
-    if (!message.member.hasPermission("Ownership"))
-      if (!message.channel.guild) return;
-    if (message.content < 1023) return;
-    const mrfix = new Discord.RichEmbed()
-      .setAuthor(bot.user.username, bot.user.avatarURL)
-      .setThumbnail(bot.user.avatarURL).setDescription(`AntiBan
-Enabled:🟢 
-Maximum Ban : ${config[message.guild.id].banLimit}
--
-AntiKick
-Enabled:🟢 
-Maximum Kick : ${config[message.guild.id].kickLimits}
--
-AntiChannelD
-Enabled:🟢 
-Maximum Delete : ${config[message.guild.id].chaDelLimit}
--
-AntiChannelC
-Enabled:🟢 
-Maximum Create : ${config[message.guild.id].chaCrLimit}
--
-AntiRoleD
-Enabled:🟢 
-Maximum Delete : ${config[message.guild.id].roleDelLimit}
--
-AntiRoleC
-Enabled:🟢 
-Maximum Create : ${config[message.guild.id].roleCrLimits}
--
-AntiTime
-Enabled:🟢 
-Maximum Time : ${config[message.guild.id].time}
-`);
 
-    message.channel.sendEmbed(mrfix);
+// ======== { • anti reklam • }======== //
+bot.on("message", msg => {
+  if (msg.author.bot) return;
+  if (msg.content.includes("http")) {
+    if (msg.member.hasPermission("MANAGE_MESSAGES")) return;
+    if (!msg.channel.guild) return;
+    msg.delete();
+    msg.reply("```You cant send link .```");
   }
 });
-
+// ======== { • anti here • }======== //
+bot.on("message", msg => {
+  if (msg.author.bot) return;
+  if (msg.content.includes("@here")) {
+    if (msg.member.hasPermission("MANAGE_MESSAGES")) return;
+    if (!msg.channel.guild) return;
+    msg.delete();
+    msg.reply("```You cant send here .```");
+  }
+});
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
