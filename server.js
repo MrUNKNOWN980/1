@@ -33,20 +33,20 @@ bot.on("message", message => {
 
 **The prefix for the bot is: z! **
 
-** <a:693211301769642027:764570638957543494>z!antibots on **
-** <a:693211301769642027:764570638957543494>z!antibots off **
-** <a:693211301769642027:764570638957543494> z!anti ban [1 to 3] **
-** <a:693211301769642027:764570638957543494>z!anti kick [1 to 3] **
-** <a:693211301769642027:764570638957543494>z!anti roleC [1 to 3] **
-** <a:693211301769642027:764570638957543494>z!anti rolelD [1 to 2] **
-** <a:693211301769642027:764570638957543494>z!anti channel[1 to 3] **
-** <a:693211301769642027:764570638957543494>z!anti time **
-** <a:693211301769642027:764570638957543494>z!server **
-** <a:693211301769642027:764570638957543494>z!invite **
-** <a:693211301769642027:764570638957543494>z!lock **
-** <a:693211301769642027:764570638957543494>z!unlock **
-** <a:693211301769642027:764570638957543494>z!clear **
-** <a:693211301769642027:764570638957543494>z!bot **
+** z!antibots on **
+** z!antibots off **
+** z!anti ban [1 to 3] **
+** z!anti kick [1 to 3] **
+** z!anti roleC [1 to 3] **
+** z!anti rolelD [1 to 2] **
+** z!anti channel[1 to 3] **
+** z!anti time **
+** z!server **
+** z!invite **
+** z!lock **
+** z!unlock **
+** z!clear **
+** z!bot **
 ** no spam [ @ everyone @ here ] **
 **[support](https://discord.gg/t5vzjFp)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     message.channel.sendEmbed(embed);
