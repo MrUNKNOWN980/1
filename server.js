@@ -33,21 +33,21 @@ bot.on("message", message => {
 
 **The prefix for the bot is: z! **
 
-** z!antibots on **
-** z!antibots off **
-** z!anti ban [1 to 3] **
-** z!anti kick [1 to 3] **
-** z!anti roleC [1 to 3] **
-** z!anti rolelD [1 to 2] **
-** z!anti channel[1 to 3] **
-** z!anti time **
-** z!server **
-** z!invite **
-** z!lock **
-** z!unlock **
-** z!clear **
-** z!bot **
-** no spam [ @ everyone @ here ] **
+** <a:693211301769642027:764570638957543494>z!antibots on **
+** <a:693211301769642027:764570638957543494>z!antibots off **
+** <a:693211301769642027:764570638957543494> z!anti ban [1 to 3] **
+** <a:693211301769642027:764570638957543494>z!anti kick [1 to 3] **
+** <a:693211301769642027:764570638957543494>z!anti roleC [1 to 3] **
+** <a:693211301769642027:764570638957543494>z!anti rolelD [1 to 2] **
+** <a:693211301769642027:764570638957543494>z!anti channel[1 to 3] **
+** <a:693211301769642027:764570638957543494>z!anti time **
+** <a:693211301769642027:764570638957543494>z!server **
+** <a:693211301769642027:764570638957543494>z!invite **
+** <a:693211301769642027:764570638957543494>z!lock **
+** <a:693211301769642027:764570638957543494>z!unlock **
+** <a:693211301769642027:764570638957543494>z!clear **
+** <a:693211301769642027:764570638957543494>z!bot **
+** no spam [ @ everyone @here ] **
 **[support](https://discord.gg/t5vzjFp)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     message.channel.sendEmbed(embed);
   }
@@ -823,4 +823,4 @@ bot.on("message", msg => {
     msg.reply("```You cant send here .```");
   }
 });
-bot.login("OKJo7Fz2ZG0kEEb_v2CytM8w-XW5Vzdz");
+bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.K9BqN3b4dHCA_bTRXXqHpqs7MDY");
