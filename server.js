@@ -35,12 +35,13 @@ bot.on("message", message => {
 
 ** z!antibots on **
 ** z!antibots off **
-** z!anti ban [1 to 3] **
-** z!anti kick [1 to 3] **
-** z!anti roleC [1 to 3] **
-** z!anti rolelD [1 to 2] **
-** z!anti channel[1 to 3] **
-** z!anti time **
+** z!anti ban {1 to 4}**
+** z!anti kick {1 to 4}**
+** z!anti roleC {1 to 4}**
+** z!anti rolelD {1 to 4}**
+** z!anti channel {1 to 4}**
+** z!anti channelC { 1 to 4 }**
+** z!anti time { 0.1 }**
 ** z!server **
 ** z!invite **
 ** z!lock **
@@ -75,7 +76,7 @@ bot.on('message', message => {
             .addField('``channels``' , `[ ${bot.channels.size} ]` , true)
             .addField('``Users``' ,`[ ${bot.users.size} ]` , true)
            .addField("**Bot Owner** :  ", `» <@735510419577372743>`, true)
-	.addField("**Bot co Owner** :  ", `» <@536132284613656582>`, true)
+	.addField("**Bot co Owner** :  ", `» <@627168386199191553>`, true)
        .addField("**Bot admin** :  ", `» <@729012830413652098>`, true)
       .addField('``My Prefix``' , `[ ${prefix} ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
