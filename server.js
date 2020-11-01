@@ -32,27 +32,54 @@ bot.on("message", message => {
 
 
 **The prefix for the bot is: z! **
-
-** z!antibots on **
-** z!antibots off **
-** z!anti ban {1 to 4}**
-** z!anti kick {1 to 4}**
-** z!anti roleC {1 to 4}**
-** z!anti rolelD {1 to 4}**
-** z!anti channel {1 to 4}**
-** z!anti channelC { 1 to 4 }**
-** z!anti time { 0.1 }**
-** z!server **
-** z!invite **
-** z!lock **
-** z!unlock **
-** z!clear **
-** z!bot **
-** no spam [ @ everyone @ here ] **
-**[support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
+**Security** **:closed_lock_with_key:**
+ z!anti ban {1 to 4}
+ z!anti kick {1 to 4}
+ z!anti roleC {1 to 4}
+ z!anti rolelD {1 to 4}
+ z!anti channel {1 to 4}
+ z!anti channelC { 1 to 4 }
+ z!anti time { 0.1 }
+ z!antibots on 
+ z!antibots off 
+ z!settings
+**General** **:tools:**
+ z!server 
+ z!invite 
+ z!bot 
+ z!members
+**Moderation** **:lock:**
+ z!ban
+ z!kick
+ z!lock 
+ z!unlock 
+ z!clear 
+   **anti** **:no_entry_sign:**
+  [ @ everyone @ here @ links ] **
+[support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
+    .setTimestamp()
     message.channel.sendEmbed(embed);
   }
 });
+
+
+bot.on('message',function(message) {
+  if (message.author.bot) return;
+                  if(!message.channel.guild) return;
+
+                    if (message.content === prefix + "members") {
+ const embed = new Discord.RichEmbed()
+
+    .setDescription(`**Members info 
+:green_heart: online:   ${message.guild.members.filter(m=>m.presence.status == 'online').size}
+:heart:  dnd:       ${message.guild.members.filter(m=>m.presence.status == 'dnd').size}
+:yellow_heart:  idle:     ${message.guild.members.filter(m=>m.presence.status == 'idle').size}
+:diamond_shape_with_a_dot_inside:   membersCount:  ${message.guild.memberCount - message.guild.members.filter(m=>m.user.bot).size}
+:bulb: bots: ${message.guild.members.filter(m=>m.user.bot).size} **`)
+         message.channel.send({embed});
+
+    }
+      });
 bot.on('message', message => {
 
 if(message.content.includes("@everyone")){
@@ -64,7 +91,66 @@ message.reply("you cant send everyone message")
 }
 
 });
+bot.on('message', message => {
+ if(!message.channel.guild) return; 	 	
+ 
+  if (message.author.bot) return;
+  if (message.author.codes) return;
+  if (!message.content.startsWith(prefix)) return;
 
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+if (message.content.split(" ")[0].toLowerCase() === prefix + "ban") {
+               if(!message.channel.guild) return;
+         
+  if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return;
+  if(!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return;
+  let user = message.mentions.users.first();
+  
+  if (message.mentions.users.size < 1) return message.reply('كەسەكە تاگ بكە').then(message => message.delete(4000))
+  if (!message.guild.member(user)
+  .bannable) return message.reply("ناتوانم باندی بكەم").then(message => message.delete(4000))
+
+
+  message.guild.member(user).ban(7, user);
+
+message.channel.send(`** ${user.tag} banned from the server ! :airplane: **  `).then(message => message.delete(10000))
+
+}
+});
+ bot.on('message', message => {
+ if(!message.channel.guild) return; 	 	
+ 
+  if (message.author.bot) return;
+  if (message.author.codes) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+if (message.content.split(" ")[0].toLowerCase() === prefix + "kick") {
+               if(!message.channel.guild) return;
+         
+  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return;
+  if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) return;
+  let user = message.mentions.users.first();
+  
+  if (message.mentions.users.size < 1) return message.reply('كەسەكە تاگ بكە').then(message => message.delete(4000))
+  if (!message.guild.member(user)
+  .bannable) return message.reply("ناتوانم كیكی بكەم").then(message => message.delete(4000))
+
+
+  message.guild.member(user).kick(7, user);
+
+message.channel.send(`** ${user.tag} kicked from the server ! :airplane: **  `).then(message => message.delete(10000))
+
+}
+});
 bot.on('message', message => {
     if (message.content.startsWith(prefix+"bot")) {
     message.channel.send({
@@ -114,8 +200,49 @@ bot.on("ready", () => {
   console.log(`Version : 0.0.1`);
   console.log(`[!]-------------------------------------[!]`);
 });
-
-
+bot.on('message', message => {
+    if (message.content.startsWith(prefix+"settings")) {
+   if (!message.member.hasPermission("ADMINISTRATOR")) return;
+	    if(!antibots[message.guild.id]) antibots[message.guild.id] = {
+          onoff: 'Off'
+        }
+	    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setTitle('Your Settings')
+            .setThumbnail(bot.user.avatarURL)
+            .setColor('#000000')
+            .addField('AntiBan' ,`Enabled::green_circle: 
+Maximum Ban:${config[message.guild.id].banLimit} ` )
+            .addField('Anti Kick', `Enabled: :green_circle:
+Maximum Kick:${config[message.guild.id].kickLimits}`)
+            .addField('Anti Channel',`Enabled: :green_circle:
+Maximum ChannelD:${config[message.guild.id].chaDelLimit}
+Maximum ChannelC:${config[message.guild.id].chaCrLimit}`)
+            .addField('Anti Role' , `Enabled: :green_circle:
+Maximum RoleD:${config[message.guild.id].roleDelLimit}
+Maximum RoleC:${config[message.guild.id].roleCrLimits}`)
+             .addField('Anti Time' , `Enabled: :green_circle:
+Maximum Time: ${config[message.guild.id].time}`)
+	    
+             .setFooter(message.author.username, message.client.avatarURL)     
+	    .setTimestamp()
+    })
+}
+});
+bot.on('guildCreate', guild => {
+  bot.channels.get("772567854373142528").send(`【 ** zyat kra bo am servara** 】
+**Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
+});
+bot.on('guildDelete', guild => {
+  bot.channels.get("772567854373142528").send(`【 ** kick kra lam servara ** 】
+**Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
+});
 bot.on("ready", () => {
   bot.user.setActivity("z!help It's time to secure your server!", {
     type: "PLAYING"
