@@ -930,17 +930,6 @@ bot.on("message", message => {
      
 
 });
-
-// ======== { • anti reklam • }======== //
-bot.on("message", msg => {
-  if (msg.author.bot) return;
-  if (msg.content.includes("http")) {
-    if (msg.member.hasPermission("MANAGE_MESSAGES")) return;
-    if (!msg.channel.guild) return;
-    msg.delete();
-    msg.reply("```You cant send link .```");
-  }
-});
 // ======== { • anti here • }======== //
 bot.on("message", msg => {
   if (msg.author.bot) return;
