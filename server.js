@@ -163,7 +163,7 @@ bot.on('message', message => {
             .addField('``Users``' ,`[ ${bot.users.size} ]` , true)
            .addField("**Bot Owner** :  ", `» <@735510419577372743>`, true)
 	.addField("**Bot co Owner** :  ", `» <@627168386199191553>`, true)
-       .addField("**Bot admin** :  ", `» <@729012830413652098>`, true)
+       .addField("**Bot admin** :  ", `» <@642381418361651220>`, true)
       .addField('``My Prefix``' , `[ ${prefix} ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
 			       .setFooter(`${bot.user.username}`, bot.user.avatarURL)
