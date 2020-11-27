@@ -941,7 +941,7 @@ bot.on("message", msg => {
   }
 });
 
-bot.on("guildCreate" , hama => {
+client.on("guildCreate" , hama => {
   if(hama.memberCount < 100 ){
     console.log(name ( ${hama.name} ) zhmaray memberakan ( ${hama.memberCount}) created by MrHAMA)//by MrHAMA
     hama.leave();
