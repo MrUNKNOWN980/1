@@ -941,10 +941,5 @@ bot.on("message", msg => {
   }
 });
 
-bot.on("guildCreate" , hama => {
-  if(hama.memberCount < 100 ){
-    msg.log(name ( ${hama.name} ) zhmaray memberakan ( ${hama.memberCount}) created by MrHAMA)//by MrHAMA
-   msg.leave();
-  }
-})
+
 bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.avp5Vo-gwD3lywrwzcL2MzLgBls");
