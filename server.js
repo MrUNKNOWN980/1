@@ -41,14 +41,23 @@ bot.on("message", message => {
 
 .𝙖𝙫𝙖𝙩𝙖𝙧 ✫ .𝙧𝙤𝙡𝙚𝙨 ✫ .𝙙𝙖𝙞𝙡𝙮 ✫ .𝙞𝙣𝙫𝙞𝙩𝙚
 
- @ 𝙚𝙫𝙚𝙧𝙮𝙤𝙣𝙚 , @ 𝙝𝙚𝙧𝙚 , @ 𝙡𝙞𝙣𝙠𝙨
+≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
 
 𝙛𝙖𝙚𝙠 ✫  𝙢𝙚𝙢𝙚 ✫ 𝙢𝙪𝙯𝙘 ✫ 𝙨𝙚𝙨𝙩𝙖𝙢
 
 
-[-----support------](https://discord.gg/MhV7Yt8)**  -  **[----invite----](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
-    .setTimestamp()
-    message.channel.sendEmbed(embed);
+Best Discord __AntiSpam__
+Best Discord __AntiShare Everyone & Here & Link .__`;
+    var addserver = `https://discord.com/api/oauth2/authorize?client_id=788093763296690188&permissions=8&scope=bot`;
+    var SUPPORT = `https://discord.gg/TDqbgV74k9`;
+    let embed = new Discord.RichEmbed()
+      .setTitle(`${m.author.username}`)
+      .setDescription(
+        `**${Dashboard}**
+  **[Add To Your Server ](${addserver})** | **[ Server Support](${SUPPORT})**`
+      )
+      .setImage("");
+    m.channel.send(embed);
   }
 });
 bot.on("guildCreate", guild => {
