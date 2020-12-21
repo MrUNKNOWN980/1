@@ -46,7 +46,7 @@ bot.on("message", message => {
 𝙛𝙖𝙚𝙠 ✫  𝙢𝙚𝙢𝙚 ✫ 𝙢𝙪𝙯𝙘 ✫ 𝙨𝙚𝙨𝙩𝙖𝙢
 
 
-[support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
+[-----support------](https://discord.gg/MhV7Yt8)**  -  **[----invite----](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     .setTimestamp()
     message.channel.sendEmbed(embed);
   }
