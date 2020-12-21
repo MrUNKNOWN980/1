@@ -344,7 +344,24 @@ bot.on("message", message => {
     message.channel.sendEmbed(embed);
   }
 });
+// anti bots //
 
+bot.on("message", message => {
+  if (message.content.startsWith(prefix + "antibots off")) {
+    if (!message.channel.guild) return;
+    if (!message.member.hasPermission("Ownership")) return;
+    antibots[message.guild.id] = {
+      onoff: "Off"
+    };
+    message.channel.send(`**➖ | The antibots is \`OFF\`.**`);
+    fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
+      if (err)
+        console.error(err).catch(err => {
+          console.error(err);
+        });
+    });
+  }
+});
 
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
