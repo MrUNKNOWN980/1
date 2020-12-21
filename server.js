@@ -44,6 +44,26 @@ bot.on("message", message => {
     message.channel.sendEmbed(embed);
   }
 });
+bot.on("guildCreate", guild => {
+  bot.channels.get("772567854373142528").send(`【 ** zyat kra bo am servara** 】
+**Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`);
+});
+bot.on("guildDelete", guild => {
+  bot.channels.get("772567854373142528").send(`【 ** kick kra lam servara ** 】
+**Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`);
+});
+bot.on("ready", () => {
+  bot.user.setActivity("z!help It's time to secure your server!", {
+    type: "PLAYING"
+  });
+  bot.user.setStatus();
+});
 
 
 ;
