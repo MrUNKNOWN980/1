@@ -277,41 +277,16 @@ bot.on("message", SAEWAN => {
     SAEWAN.react("🥰");
   }
 });
-//muve all// 
-bot.on("message", SAEWAN => {
-  if (SAEWAN.content.startsWith(prefix + "muveall")) {
-    if (!SAEWAN.member.hasPermission("MOVE_MEMBERS"))
-      return SAEWAN.channel.send("**تـۆ ڕۆڵـی `ADMINSTRATOT` نـیـە بـبـورە**");
-    if (!SAEWAN.guild.member(client.user).hasPermission("MOVE_MEMBERS"))
-      return SAEWAN.reply("**لايوجد لدي صلاحية السحب**");
-    if (SAEWAN.member.voiceChannel == null)
-      return SAEWAN.channel.send(`**لەهـیـچ ژوورێـک نـیـت** `);
-    var author = SAEWAN.member.voiceChannelID;
-    var m = SAEWAN.guild.members.filter(m => m.voiceChannel);
-    SAEWAN.guild.members
-      .filter(m => m.voiceChannel)
-      .forEach(m => {
-        m.setVoiceChannel(author);
-      });
-    SAEWAN.channel.send(`** کاراکرا**`);
+//rols // 
+
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "roles")) {
+    var roles = message.guild.roles.map(roles => `${roles.name}, `).join(" ");
+    let embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .addField("**ڕۆڵــی ســێــرڤــەر :**", `**[${roles}]**`);
+    message.channel.sendEmbed(embed);
   }
 });
-//wenay selvar //
 
-bot.on("message", SAEWAN => {
-  if (!SAEWAN.channel.guild) return;
-  if (SAEWAN.author.bot) return;
-  if (SAEWAN.content.startsWith(prefix + "image")) {
-    const embed = new Discord.RichEmbed()
-
-      .setTitle(`** ${SAEWAN.guild.name} **`)
-      .setAuthor(SAEWAN.author.username, SAEWAN.guild.iconrURL)
-      .setColor(0x164fe3)
-      .setImage(SAEWAN.guild.iconURL)
-      .setURL(SAEWAN.guild.iconrURL)
-      .setTimestamp();
-
-    SAEWAN.channel.send({ embed });
-  }
-});
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
