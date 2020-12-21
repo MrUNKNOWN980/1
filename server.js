@@ -43,7 +43,10 @@ z!ban , z!kick , z!profile , z!muveall
 
 **-----------------------------------------------**
    
-  [ @ everyone @ here @ links ] **
+ @everyone , @here , @links 
+
+**-----------------------------------------------**
+
 [support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     .setTimestamp()
     message.channel.sendEmbed(embed);
@@ -279,20 +282,6 @@ bot.on("message", SAEWAN => {
 });
 //rols // 
 
-bot.on("message", message => {
-  if (!message.channel.guild) return;
-  if (message.content.startsWith(prefix + "ping")) {
-    if (message.author.bot) return;
-    if (!message.channel.guild) return;
-    var Bping = `${Math.round(client.ping)}`;
 
-    const E1ping = new Discord.RichEmbed()
-      .setTitle("ــــــــــــــــــــــــــــــ")
-      .addField(`📶 | **BOT Ping Is** : __${Bping}__`, `___________`)
-      .setFooter(`Requested by | ${message.author.tag}`)
-      .setColor("RANDOM");
-    message.channel.send(E1ping);
-  }
-});
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
