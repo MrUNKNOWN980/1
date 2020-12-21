@@ -35,17 +35,15 @@ bot.on("message", message => {
 
 **==============================**
 
-.lock , .unlock , .bot , .members
+.𝙡𝙪𝙘𝙠, .𝙪𝙣𝙡𝙤𝙘𝙠 , .𝙗𝙤𝙩 , .𝙢𝙚𝙢𝙗𝙖𝙧𝙚𝙨
 
-.ban , .kick , .profile , .muveall
+.𝙗𝙖𝙣 , .𝙠𝙞𝙘𝙠 , .𝙥𝙧𝙤𝙛𝙞𝙡𝙚 , .𝙢𝙪𝙫𝙚𝙖𝙡𝙡
 
-.avatar , .roles  , .profile
+.𝙖𝙫𝙖𝙩𝙖𝙧, .𝙧𝙤𝙡𝙚𝙨 , .𝙙𝙖𝙞𝙡𝙮
 
- @ everyone , @ here , @ links
+ @ 𝙚𝙫𝙚𝙧𝙮𝙤𝙣𝙚 , @ 𝙝𝙚𝙧𝙚 , @ 𝙡𝙞𝙣𝙠𝙨
 
-**==============================**
-
-faek ,  meme   ,   muzc  .  sestam
+𝙛𝙖𝙚𝙠 ,  𝙢𝙚𝙢𝙚 , 𝙢𝙪𝙯𝙘 , 𝙨𝙚𝙨𝙩𝙖𝙢
 *===============================**
 
 [support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
