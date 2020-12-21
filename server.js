@@ -36,9 +36,9 @@ bot.on("message", message => {
 **-----------------------------------------------**
 z!lock , z!unlock , z!bot , z!members
 **-----------------------------------------------**
+z!ban , z!kick ,
 
-
-   **anti** **:no_entry_sign:**
+   
   [ @ everyone @ here @ links ] **
 [support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     .setTimestamp()
@@ -163,6 +163,70 @@ bot.on("message", message => {
     });
   }
 });
+// ban  kick   //
+
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (message.content.split(" ")[0].toLowerCase() === prefix + "ban") {
+    if (!message.channel.guild) return;
+
+    if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))
+      return;
+    if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return;
+    let user = message.mentions.users.first();
+
+    if (message.mentions.users.size < 1)
+      return message
+        .reply("كەسەكە تاگ بكە")
+        .then(message => message.delete(4000));
+    if (!message.guild.member(user).bannable)
+      return message
+        .reply("ناتوانم باندی بكەم")
+        .then(message => message.delete(4000));
+
+    message.guild.member(user).ban(7, user);
+
+    message.channel
+      .send(`** ${user.tag} banned from the server ! :airplane: **  `)
+      .then(message => message.delete(10000));
+  }
+});
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (message.content.split(" ")[0].toLowerCase() === prefix + "kick") {
+    if (!message.channel.guild) return;
+
+    if (!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
+      return;
+    if (!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) return;
+    let user = message.mentions.users.first();
+
+    if (message.mentions.users.size < 1)
+      return message
+        .reply("كەسەكە تاگ بكە")
+        .then(message => message.delete(4000));
+    if (!message.guild.member(user).bannable)
+      return message
+        .reply("ناتوانم كیكی بكەم")
+        .then(message => message.delete(4000));
+
+    message.guild.member(user).kick(7, user);
+
+    message.channel
+      .send(`** ${user.tag} kicked from the server ! :airplane: **  `)
+      .then(message => message.delete(10000));
+  }
+});
+
 
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
