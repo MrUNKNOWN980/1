@@ -44,7 +44,7 @@ bot.on("message", message => {
  @ 𝙚𝙫𝙚𝙧𝙮𝙤𝙣𝙚 , @ 𝙝𝙚𝙧𝙚 , @ 𝙡𝙞𝙣𝙠𝙨
 
 𝙛𝙖𝙚𝙠 ,  𝙢𝙚𝙢𝙚 , 𝙢𝙪𝙯𝙘 , 𝙨𝙚𝙨𝙩𝙖𝙢
-"https://cdn.discordapp.com/attachments/789969434760577064/790677503274385458/Click_Here_To_AddRobot"
+
 
 [support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     .setTimestamp()
