@@ -16,7 +16,7 @@ const request = require("request");
 
 const ytdl = require("ytdl-core");
 
-const prefix = "z!";
+const prefix = ".";
 
 const queue = new Map();
 
@@ -32,23 +32,27 @@ bot.on("message", message => {
 
 
 **The prefix for the bot is: z! **
-**Security** **:closed_lock_with_key:**
-**-----------------------------------------------**
 
-z!lock , z!unlock , z!bot , z!members ,
+**======================================**
 
-**-----------------------------------------------**
+.lock , .unlock , .bot , .members ,
 
-z!ban , z!kick , z!profile , z!muveall ,
+**======================================**
 
-**-----------------------------------------------**
+.ban , .kick , .profile , .muveall ,
 
-z!avatar ,  z!roles  ,   z!profile
+**======================================**
 
-**-----------------------------------------------**
+.avatar ,  .roles  ,   .profile
+
+**======================================**
+
  @ everyone , @ here , @ links 
 
-**-----------------------------------------------**
+**======================================**
+
+faek ,  meme   ,   muzc  .  sestam
+*=======================================**
 
 [support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     .setTimestamp()
