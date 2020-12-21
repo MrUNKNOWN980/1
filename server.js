@@ -23,7 +23,7 @@ const queue = new Map();
 bot.on("ready", () => console.log("🤖Ready Bot In Online🤖"));
 
 bot.on("message", message => {
-  if (message.content === "z!help") {
+  if (message.content === ".help") {
     const embed = new Discord.RichEmbed()
       .setColor("BLACK")
        .setFooter(message.author.username, message.author.displayAvatarURL)
@@ -31,7 +31,7 @@ bot.on("message", message => {
       .setDescription(`**COMAND HELP MENU**
 
 
-**The prefix for the bot is: z! **
+**The prefix for the bot is: . **
 
 **==============================**
 
@@ -68,7 +68,7 @@ Server id: __${guild.id}__
 Server Count: __${guild.memberCount}__**`);
 });
 bot.on("ready", () => {
-  bot.user.setActivity("z!help It's time to secure your server!", {
+  bot.user.setActivity(".help It's time to secure your server!", {
     type: "PLAYING"
   });
   bot.user.setStatus();
