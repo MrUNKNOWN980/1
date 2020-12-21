@@ -297,5 +297,45 @@ bot.on("message", message => {
   }
 });
 
+client.on("message", pixelbot => {
+  // itzZa1D - Codes Team.
+  if (pixelbot.content.startsWith(prefix + "user")) {
+    // itzZa1D - Codes Team.
+    if (pixelbot.author.bot) return;
+    if (!pixelbot.guild)
+      return pixelbot.reply("**:x: - This Command is only done on Servers**");
+    pixelbot.guild.fetchInvites().then(invites => {
+      // itzZa1D - Codes Team.
+      let personalInvites = invites.filter(
+        i => i.inviter.id === pixelbot.author.id
+      );
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+      var roles = pixelbot.member.roles
+        .map(roles => `**__${roles.name}__ |**`)
+        .join(` `);
+      let pixeluser = new Discord.RichEmbed() // itzZa1D - Codes Team.
+        .setColor("#00000")
+        .setTitle(" :beginner: :heartpulse:   | Use  r Info") // itzZa1D - Codes Team.
+.setAuthor(pixelbot.author.username, pixelbot.author.avatarURL)
+        .addField("**✽ Name :**   ", pixelbot.author.username, true)
+        .addField("**✽ Tag :**   ", pixelbot.author.discriminator, true)
+        .addField("**✽ ID :** ", pixelbot.author.id, true) // itzZa1D - Codes Team.
+        .addField(
+          "**✽ Joined At :**   ",
+          moment(pixelbot.joinedAt).format("D/M/YYYY h:mm a "),
+          true
+        )
+        .addField(
+          "**✽ Created At :**    ",
+          moment(pixelbot.author.createdAt).format("D/M/YYYY h:mm a "),
+          true
+        )
+        .addField("**✽ Total invites :**    ", inviteCount, true)
+        .setTimestamp(); // itzZa1D - Codes Team.
+
+      pixelbot.channel.sendEmbed(pixeluser).then(c => {}); // itzZa1D - Codes Team.
+    });
+  }
+});
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
