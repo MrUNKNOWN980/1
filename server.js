@@ -279,13 +279,19 @@ bot.on("message", SAEWAN => {
 });
 //rols // 
 
-client.on("message", message => {
-  if (message.content.startsWith(prefix + "roles")) {
-    var roles = message.guild.roles.map(roles => `${roles.name}, `).join(" ");
-    let embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .addField("**ڕۆڵــی ســێــرڤــەر :**", `**[${roles}]**`);
-    message.channel.sendEmbed(embed);
+bot.on("message", message => {
+  if (!message.channel.guild) return;
+  if (message.content.startsWith(prefix + "ping")) {
+    if (message.author.bot) return;
+    if (!message.channel.guild) return;
+    var Bping = `${Math.round(client.ping)}`;
+
+    const E1ping = new Discord.RichEmbed()
+      .setTitle("ــــــــــــــــــــــــــــــ")
+      .addField(`📶 | **BOT Ping Is** : __${Bping}__`, `___________`)
+      .setFooter(`Requested by | ${message.author.tag}`)
+      .setColor("RANDOM");
+    message.channel.send(E1ping);
   }
 });
 
