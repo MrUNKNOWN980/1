@@ -35,15 +35,18 @@ bot.on("message", message => {
 **Security** **:closed_lock_with_key:**
 **-----------------------------------------------**
 
-z!lock , z!unlock , z!bot , z!members
+z!lock , z!unlock , z!bot , z!members ,
 
 **-----------------------------------------------**
 
-z!ban , z!kick , z!profile , z!muveall
+z!ban , z!kick , z!profile , z!muveall ,
 
 **-----------------------------------------------**
-   
- @everyone , @here , @links 
+
+z!avatar ,  z!roles  ,   z!profile
+
+**-----------------------------------------------**
+ @ everyone , @ here , @ links 
 
 **-----------------------------------------------**
 
@@ -280,7 +283,7 @@ bot.on("message", SAEWAN => {
     SAEWAN.react("🥰");
   }
 });
-//rols // 
+//rasm   // 
 bot.on("message", message => {
   const mm = message.mentions.members.first() || message.member;
   if (message.content.startsWith(prefix + "avatar")) {
@@ -297,7 +300,7 @@ bot.on("message", message => {
   }
 });
 
-client.on("message", pixelbot => {
+bot.on("message", pixelbot => {
   // itzZa1D - Codes Team.
   if (pixelbot.content.startsWith(prefix + "user")) {
     // itzZa1D - Codes Team.
