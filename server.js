@@ -277,9 +277,18 @@ bot.on("message", SAEWAN => {
   }
 });
 
+
 bot.on("message", SAEWAN => {
   if (SAEWAN.content === "سڵاو") {
     SAEWAN.channel.send("**🌸 | سڵاو لە تۆش بەخێربێیت**");
+    SAEWAN.react("🥰");
+  }
+});
+
+
+bot.on("message", SAEWAN => {
+  if (SAEWAN.content === "meme") {
+    SAEWAN.channel.send("https://glitch.com/edit/#!/relic-intriguing-hortensia");
     SAEWAN.react("🥰");
   }
 });
