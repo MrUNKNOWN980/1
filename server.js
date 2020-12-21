@@ -322,6 +322,29 @@ bot.on("message", message => {
     message.channel.send(embed);
   }
 });
+// 𝙀𝙣𝙫𝙚𝙩𝙞 //
+
+bot.on("message", message => {
+  if (message.content === ".invite") {
+    if (!message.channel.guild)
+      return message.reply(
+        "Please Do not type bot commands in bot private chat"
+      );
+    let embed = new Discord.RichEmbed()
+      .setColor("GREEN")
+      .setTitle("=--> بۆ ڕاکێشانی بۆتەکە داگرە <--=")
+      .setImage("")
+      .setImage(
+        "https://media.discordapp.net/attachments/738379901656367124/739798803481100298/PicsArt_08-03-01.50.10.gif"
+      )
+      .setURL(
+        "https://discord.com/api/oauth2/authorize?client_id=740195235069427742&permissions=8&scope=bot"
+      ) // Type Your Link here after ''
+      .setFooter("SHETA:SANFUR.", message.author.avatarURL);
+    message.channel.sendEmbed(embed);
+  }
+});
+
 
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
