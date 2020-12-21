@@ -259,21 +259,21 @@ bot.on("message", async SAEWAN => {
 bot.on("message", SAEWAN => {
   if (SAEWAN.content === "slaw") {
     SAEWAN.channel.send("**🌸 | سڵاو لە تۆش بەخێربێیت**");
-    SAEWAN.react("🥰");
+    SAEWAN.react("🥱");
   }
 });
 
 bot.on("message", SAEWAN => {
   if (SAEWAN.content === "Slaw") {
     SAEWAN.channel.send("**🌸 | سڵاو لە تۆش بەخێربێیت**");
-    SAEWAN.react("🥰");
+    SAEWAN.react("🥱");
   }
 });
 
 bot.on("message", SAEWAN => {
   if (SAEWAN.content === "سلاو") {
     SAEWAN.channel.send("**🌸 | سڵاو لە تۆش بەخێربێیت**");
-    SAEWAN.react("🥰");
+    SAEWAN.react("🥱");
   }
 });
 
@@ -281,7 +281,7 @@ bot.on("message", SAEWAN => {
 bot.on("message", SAEWAN => {
   if (SAEWAN.content === "سڵاو") {
     SAEWAN.channel.send("**🌸 | سڵاو لە تۆش بەخێربێیت**");
-    SAEWAN.react("🥰");
+    SAEWAN.react("🥱");
   }
 });
 
@@ -289,9 +289,27 @@ bot.on("message", SAEWAN => {
 bot.on("message", SAEWAN => {
   if (SAEWAN.content === "meme") {
     SAEWAN.channel.send("https://glitch.com/edit/#!/relic-intriguing-hortensia");
-    SAEWAN.react("🥰");
+    SAEWAN.react("📠");
   }
 });
+
+
+bot.on("message", SAEWAN => {
+  if (SAEWAN.content === "faek") {
+    SAEWAN.channel.send("https://glitch.com/edit/#!/rain-eggplant-hyssop");
+    SAEWAN.react("📠");
+  }
+});
+
+bot.on("message", SAEWAN => {
+  if (SAEWAN.content === "muzc") {
+    SAEWAN.channel.send("https://glitch.com/edit/#!/stingy-sore-almanac");
+    SAEWAN.react("📠");
+  }
+});
+
+
+
 //rasm   // 
 bot.on("message", message => {
   const mm = message.mentions.members.first() || message.member;
