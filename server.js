@@ -346,20 +346,13 @@ bot.on("message", message => {
 });
 // anti bots //
 
-bot.on("message", message => {
-  if (message.content.startsWith(prefix + "antibots off")) {
-    if (!message.channel.guild) return;
-    if (!message.member.hasPermission("Ownership")) return;
-    antibots[message.guild.id] = {
-      onoff: "Off"
-    };
-    message.channel.send(`**➖ | The antibots is \`OFF\`.**`);
-    fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
-      if (err)
-        console.error(err).catch(err => {
-          console.error(err);
-        });
-    });
+bot.on("message", msg => {
+  if (msg.author.bot) return;
+  if (msg.content.includes("http")) {
+    if (msg.member.hasPermission("MANAGE_EMOJIS")) return;
+    if (!msg.channel.guild) return;
+    msg.delete();
+    msg.reply("```You cant send link .```");
   }
 });
 
