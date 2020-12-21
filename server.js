@@ -227,7 +227,7 @@ message.channel.send(`** ${user.tag} kicked from the server ! :airplane: **  `).
 });
 //provele//
 
-client.on("message", async SAEWAN => {
+bot.on("message", async SAEWAN => {
   if (SAEWAN.content.startsWith(prefix + "profile")) {
     SAEWAN.channel.startTyping();
     setTimeout(() => {
