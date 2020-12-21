@@ -33,26 +33,20 @@ bot.on("message", message => {
 
 **The prefix for the bot is: z! **
 
-**======================================**
+**==============================**
 
-.lock , .unlock , .bot , .members ,
+.lock , .unlock , .bot , .members
 
-**======================================**
+.ban , .kick , .profile , .muveall
 
-.ban , .kick , .profile , .muveall ,
+.avatar , .roles  , .profile
 
-**======================================**
+ @ everyone , @ here , @ links
 
-.avatar ,  .roles  ,   .profile
-
-**======================================**
-
- @ everyone , @ here , @ links 
-
-**======================================**
+**==============================**
 
 faek ,  meme   ,   muzc  .  sestam
-*=======================================**
+*===============================**
 
 [support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     .setTimestamp()
