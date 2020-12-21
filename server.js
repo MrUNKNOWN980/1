@@ -47,4 +47,4 @@ bot.on("message", message => {
 
 
 ;
-bot.login("NzU5ODgxNTAyMzU1NDg4Nzk5.X3D8zA.avp5Vo-gwD3lywrwzcL2MzLgBls");
+bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
