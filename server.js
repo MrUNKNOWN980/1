@@ -165,7 +165,14 @@ bot.on("message", message => {
 });
 // ban  kick   //
 
+bot.on("message", message => {
+  if (!message.channel.guild) return;
 
+  if (message.author.bot) return;
+  if (message.author.codes) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
   let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
 
@@ -195,6 +202,14 @@ bot.on("message", message => {
       .then(message => message.delete(10000));
   }
 });
+bot.on("message", message => {
+  if (!message.channel.guild) return;
+
+  if (message.author.bot) return;
+  if (message.author.codes) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
   if (!message.content.startsWith(prefix)) return;
 
   let command = message.content.split(" ")[0];
