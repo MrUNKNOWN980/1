@@ -41,7 +41,7 @@ bot.on("message", message => {
 
 .𝙖𝙫𝙖𝙩𝙖𝙧 ✫ .𝙧𝙤𝙡𝙚𝙨 ✫ .𝙙𝙖𝙞𝙡𝙮 ✫ .𝙞𝙣𝙫𝙞𝙩𝙚
 
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
 
 𝙛𝙖𝙚𝙠 ✫  𝙢𝙚𝙢𝙚 ✫ 𝙢𝙪𝙯𝙘 ✫ 𝙨𝙚𝙨𝙩𝙖𝙢
 
@@ -335,7 +335,7 @@ bot.on("message", message => {
       .setTitle("=--> بۆ ڕاکێشانی بۆتەکە داگرە <--=")
       .setImage("")
       .setImage(
-        "https://cdn.discordapp.com/attachments/789969434760577064/790677503274385458/Click_Here_To_AddRobot"
+        "https://cdn.discordapp.com/attachments/771123389418045490/790712924301164544/image0.gif"
       )
       .setURL(
         "https://discord.com/api/oauth2/authorize?client_id=740195235069427742&permissions=8&scope=bot"
