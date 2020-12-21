@@ -296,5 +296,22 @@ bot.on("message", SAEWAN => {
     SAEWAN.channel.send(`** کاراکرا**`);
   }
 });
+//wenay selvar //
 
+bot.on("message", SAEWAN => {
+  if (!SAEWAN.channel.guild) return;
+  if (SAEWAN.author.bot) return;
+  if (SAEWAN.content.startsWith(prefix + "image")) {
+    const embed = new Discord.RichEmbed()
+
+      .setTitle(`** ${SAEWAN.guild.name} **`)
+      .setAuthor(SAEWAN.author.username, SAEWAN.guild.iconrURL)
+      .setColor(0x164fe3)
+      .setImage(SAEWAN.guild.iconURL)
+      .setURL(SAEWAN.guild.iconrURL)
+      .setTimestamp();
+
+    SAEWAN.channel.send({ embed });
+  }
+});
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
