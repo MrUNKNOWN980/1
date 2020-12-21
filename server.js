@@ -245,4 +245,52 @@ bot.on("message", async SAEWAN => {
   }
 });
 
+//slaw//
+bot.on("message", SAEWAN => {
+  if (SAEWAN.content === "slaw") {
+    SAEWAN.channel.send("**🌸 | سڵاو لە تۆش بەخێربێیت**");
+    SAEWAN.react("🥰");
+  }
+});
+
+bot.on("message", SAEWAN => {
+  if (SAEWAN.content === "Slaw") {
+    SAEWAN.channel.send("**🌸 | سڵاو لە تۆش بەخێربێیت**");
+    SAEWAN.react("🥰");
+  }
+});
+
+bot.on("message", SAEWAN => {
+  if (SAEWAN.content === "سلاو") {
+    SAEWAN.channel.send("**🌸 | سڵاو لە تۆش بەخێربێیت**");
+    SAEWAN.react("🥰");
+  }
+});
+
+bot.on("message", SAEWAN => {
+  if (SAEWAN.content === "سڵاو") {
+    SAEWAN.channel.send("**🌸 | سڵاو لە تۆش بەخێربێیت**");
+    SAEWAN.react("🥰");
+  }
+});
+//muve all// 
+bot.on("message", SAEWAN => {
+  if (SAEWAN.content.startsWith(prefix + "movall")) {
+    if (!SAEWAN.member.hasPermission("MOVE_MEMBERS"))
+      return SAEWAN.channel.send("**تـۆ ڕۆڵـی `ADMINSTRATOT` نـیـە بـبـورە**");
+    if (!SAEWAN.guild.member(client.user).hasPermission("MOVE_MEMBERS"))
+      return SAEWAN.reply("**لايوجد لدي صلاحية السحب**");
+    if (SAEWAN.member.voiceChannel == null)
+      return SAEWAN.channel.send(`**لەهـیـچ ژوورێـک نـیـت** `);
+    var author = SAEWAN.member.voiceChannelID;
+    var m = SAEWAN.guild.members.filter(m => m.voiceChannel);
+    SAEWAN.guild.members
+      .filter(m => m.voiceChannel)
+      .forEach(m => {
+        m.setVoiceChannel(author);
+      });
+    SAEWAN.channel.send(`** کاراکرا**`);
+  }
+});
+
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
