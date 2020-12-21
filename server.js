@@ -34,7 +34,8 @@ bot.on("message", message => {
 **The prefix for the bot is: z! **
 **Security** **:closed_lock_with_key:**
 **-----------------------------------------------**
-z!lock , z!unlock ,
+z!lock , z!unlock , z!bot , z!members
+**-----------------------------------------------**
 
 
    **anti** **:no_entry_sign:**
@@ -92,5 +93,76 @@ bot.on("message", message => {
     message.channel.send(":unlock: | Unlocked this channel.");
   }
 });
+
+// here   evrewan //
+
+
+bot.on("message", msg => {
+  if (msg.author.bot) return;
+  if (msg.content.includes("@here")) {
+    if (msg.member.hasPermission("MANAGE_MESSAGES")) return;
+    if (!msg.channel.guild) return;
+    msg.delete();
+    msg.reply("```You cant send here .```");
+  }
+});
+bot.on("message", message => {
+  if (message.content.includes("@everyone")) {
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+      message.delete();
+      message.reply("you cant send everyone message");
+    }
+  }
+});
+
+// membar //
+
+bot.on("message", function(message) {
+  if (message.author.bot) return;
+  if (!message.channel.guild) return;
+
+  if (message.content === prefix + "members") {
+    const embed = new Discord.RichEmbed().setDescription(`**Members info 
+:green_heart: online:   ${
+      message.guild.members.filter(m => m.presence.status == "online").size
+    }
+:heart:  dnd:       ${
+      message.guild.members.filter(m => m.presence.status == "dnd").size
+    }
+:yellow_heart:  idle:     ${
+      message.guild.members.filter(m => m.presence.status == "idle").size
+    }
+:diamond_shape_with_a_dot_inside:   membersCount:  ${message.guild.memberCount -
+      message.guild.members.filter(m => m.user.bot).size}
+:bulb: bots: ${message.guild.members.filter(m => m.user.bot).size} **`);
+    message.channel.send({ embed });
+  }
+});
+
+bot.on("message", message => {
+  if (message.content.startsWith(prefix + "bot")) {
+    message.channel.send({
+      embed: new Discord.RichEmbed()
+        .setThumbnail(bot.user.avatarURL)
+        .setColor("RANDOM")
+        .addField(
+          "``My Ping``",
+          [`${Date.now() - message.createdTimestamp}` + "MS"],
+          true
+        )
+        .addField("``servers``", [bot.guilds.size], true)
+        .addField("``channels``", `[ ${bot.channels.size} ]`, true)
+        .addField("``Users``", `[ ${bot.users.size} ]`, true)
+        .addField("**Bot Owner** :  ", `» <@735510419577372743>`, true)
+        .addField("**Bot co Owner** :  ", `» <@627168386199191553>`, true)
+        .addField("**Bot admin** :  ", `» <@642381418361651220>`, true)
+        .addField("``My Prefix``", `[ ${prefix} ]`, true)
+        .addField("``My Language``", `[ Java Script ]`, true)
+        .setFooter(`${bot.user.username}`, bot.user.avatarURL)
+        .setTimestamp()
+    });
+  }
+});
+
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
