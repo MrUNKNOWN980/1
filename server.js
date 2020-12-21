@@ -39,12 +39,12 @@ bot.on("message", message => {
 
 .𝙗𝙖𝙣 , .𝙠𝙞𝙘𝙠 , .𝙥𝙧𝙤𝙛𝙞𝙡𝙚 , .𝙢𝙪𝙫𝙚𝙖𝙡𝙡
 
-.𝙖𝙫𝙖𝙩𝙖𝙧, .𝙧𝙤𝙡𝙚𝙨 , .𝙙𝙖𝙞𝙡𝙮
+.𝙖𝙫𝙖𝙩𝙖𝙧, .𝙧𝙤𝙡𝙚𝙨 , .𝙙𝙖𝙞𝙡𝙮 ,.𝙞𝙣𝙫𝙞𝙩𝙚
 
  @ 𝙚𝙫𝙚𝙧𝙮𝙤𝙣𝙚 , @ 𝙝𝙚𝙧𝙚 , @ 𝙡𝙞𝙣𝙠𝙨
 
 𝙛𝙖𝙚𝙠 ,  𝙢𝙚𝙢𝙚 , 𝙢𝙪𝙯𝙘 , 𝙨𝙚𝙨𝙩𝙖𝙢
-*===============================**
+"https://cdn.discordapp.com/attachments/789969434760577064/790677503274385458/Click_Here_To_AddRobot"
 
 [support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
     .setTimestamp()
@@ -335,7 +335,7 @@ bot.on("message", message => {
       .setTitle("=--> بۆ ڕاکێشانی بۆتەکە داگرە <--=")
       .setImage("")
       .setImage(
-        "https://media.discordapp.net/attachments/738379901656367124/739798803481100298/PicsArt_08-03-01.50.10.gif"
+        "https://cdn.discordapp.com/attachments/789969434760577064/790677503274385458/Click_Here_To_AddRobot"
       )
       .setURL(
         "https://discord.com/api/oauth2/authorize?client_id=740195235069427742&permissions=8&scope=bot"
