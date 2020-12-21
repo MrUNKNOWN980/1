@@ -33,27 +33,10 @@ bot.on("message", message => {
 
 **The prefix for the bot is: z! **
 **Security** **:closed_lock_with_key:**
- z!anti ban {1 to 4}
- z!anti kick {1 to 4}
- z!anti roleC {1 to 4}
- z!anti rolelD {1 to 4}
- z!anti channel {1 to 4}
- z!anti channelC { 1 to 4 }
- z!anti time { 0.1 }
- z!antibots on 
- z!antibots off 
- z!settings
-**General** **:tools:**
- z!server 
- z!invite 
- z!bot 
- z!members
-**Moderation** **:lock:**
- z!ban
- z!kick
- z!lock 
- z!unlock 
- z!clear 
+**-----------------------------------------------**
+
+
+
    **anti** **:no_entry_sign:**
   [ @ everyone @ here @ links ] **
 [support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
