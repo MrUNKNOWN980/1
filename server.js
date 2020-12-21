@@ -202,45 +202,6 @@ bot.on("message", message => {
       .then(message => message.delete(10000));
   }
 });
-bot.on("message", message => {
-  if (!message.channel.guild) return;
-
-  if (message.author.bot) return;
-  if (message.author.codes) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-  if (message.content.split(" ")[0].toLowerCase() === prefix + "kick") {
-    if (!message.channel.guild) return;
-
-    if (!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
-      return;
-    if (!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) return;
-    let user = message.mentions.users.first();
-
-    if (message.mentions.users.size < 1)
-      return message
-        .reply("كەسەكە تاگ بكە")
-        .then(message => message.delete(4000));
-    if (!message.guild.member(user).bannable)
-      return message
-        .reply("ناتوانم كیكی بكەم")
-        .then(message => message.delete(4000));
-
-    message.guild.member(user).kick(7, user);
-
-    message.channel
-      .send(`** ${user.tag} kicked from the server ! :airplane: **  `)
-      .then(message => message.delete(10000));
-  }
-});
 
 
 
