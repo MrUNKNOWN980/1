@@ -225,5 +225,24 @@ message.channel.send(`** ${user.tag} kicked from the server ! :airplane: **  `).
 
 }
 });
+//provele//
+
+client.on("message", async SAEWAN => {
+  if (SAEWAN.content.startsWith(prefix + "profile")) {
+    SAEWAN.channel.startTyping();
+    setTimeout(() => {
+      SAEWAN.channel.stopTyping();
+    }, Math.random() * (1 - 3) + 1 * 200).then(
+      SAEWAN.channel.send({
+        files: [
+          {
+            name: "prfoilebycutie.png",
+            attachment: `https://api.probot.io/profile/${SAEWAN.author.id}`
+          }
+        ]
+      })
+    );
+  }
+});
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
