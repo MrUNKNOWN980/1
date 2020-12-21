@@ -34,10 +34,14 @@ bot.on("message", message => {
 **The prefix for the bot is: z! **
 **Security** **:closed_lock_with_key:**
 **-----------------------------------------------**
-z!lock , z!unlock , z!bot , z!members
-**-----------------------------------------------**
-z!ban , z!kick ,
 
+z!lock , z!unlock , z!bot , z!members
+
+**-----------------------------------------------**
+
+z!ban , z!kick , z!profile , z!muveall
+
+**-----------------------------------------------**
    
   [ @ everyone @ here @ links ] **
 [support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
@@ -275,7 +279,7 @@ bot.on("message", SAEWAN => {
 });
 //muve all// 
 bot.on("message", SAEWAN => {
-  if (SAEWAN.content.startsWith(prefix + "movall")) {
+  if (SAEWAN.content.startsWith(prefix + "muveall")) {
     if (!SAEWAN.member.hasPermission("MOVE_MEMBERS"))
       return SAEWAN.channel.send("**تـۆ ڕۆڵـی `ADMINSTRATOT` نـیـە بـبـورە**");
     if (!SAEWAN.guild.member(client.user).hasPermission("MOVE_MEMBERS"))
