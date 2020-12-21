@@ -281,7 +281,21 @@ bot.on("message", SAEWAN => {
   }
 });
 //rols // 
-
+bot.on("message", message => {
+  const mm = message.mentions.members.first() || message.member;
+  if (message.content.startsWith(prefix + "avatar")) {
+    const embed = new Discord.RichEmbed()
+      .setAuthor(mm.user.tag, mm.user.avatarURL)
+      .setTitle(" __**لینکی وێنەکەت**__")
+      .setURL(mm.user.avatarURL)
+      .setImage(mm.user.avatarURL)
+      .setFooter(
+        `Requested By : ${message.author.tag}`,
+        message.author.avatarURL
+      );
+    message.channel.send(embed);
+  }
+});
 
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
