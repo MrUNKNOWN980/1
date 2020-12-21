@@ -34,7 +34,7 @@ bot.on("message", message => {
 **The prefix for the bot is: z! **
 **Security** **:closed_lock_with_key:**
 **-----------------------------------------------**
-
+z!lock , z!unlock ,
 
 
    **anti** **:no_entry_sign:**
@@ -65,6 +65,32 @@ bot.on("ready", () => {
   bot.user.setStatus();
 });
 
+//  daxstnw krdnoy zhwr    //
 
-;
+
+bot.on("message", message => {
+  if (message.content === prefix + "lock") {
+    if (!message.channel.guild) return;
+    if (!message.member.hasPermission("ADMINISTRATOR"))
+      return message.reply("sorry you dont have permissions");
+    message.channel.overwritePermissions(message.guild.id, {
+      SEND_MESSAGES: false
+    });
+    message.react("🔒");
+    message.channel.send(":lock: | Locked this channel.");
+  }
+});
+bot.on("message", message => {
+  if (message.content === prefix + "unlock") {
+    if (!message.channel.guild) return;
+    if (!message.member.hasPermission("ADMINISTRATOR"))
+      return message.reply("sorry you dont have permissions");
+    message.channel.overwritePermissions(message.guild.id, {
+      SEND_MESSAGES: true
+    });
+    message.react("🔓");
+    message.channel.send(":unlock: | Unlocked this channel.");
+  }
+});
+
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
