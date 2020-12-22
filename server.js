@@ -386,7 +386,21 @@ bot.on("message" , function (message) {
               message.channel.send(embed)
               }
               })
+///////////
 
+
+bot.on("message", message => {
+  if (message.content === q1) {
+    message.react("🔊");
+    message.reply(`پەڕلەمانم بۆچییە بابی زەینەبی`);
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) {
+      return message.reply(`**you must joining a voice**`);
+    }
+    voiceChannel.join().then(connnection => {
+      let stream = yt("https://youtu.be/f1BSxPEc6QA", { audioonly: true });
+      const dispatcher = connnection.playStream(stream);
+    });
 
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
