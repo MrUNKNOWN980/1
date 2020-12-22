@@ -389,18 +389,18 @@ bot.on("message" , function (message) {
 ///////////
 
 
-bot.on("message", message => {
-  if (message.content === q1) {
-    message.react("🔊");
-    message.reply(`پەڕلەمانم بۆچییە بابی زەینەبی`);
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) {
-      return message.reply(`**you must joining a voice**`);
-    }
-    voiceChannel.join().then(connnection => {
-      let stream = yt("https://youtu.be/f1BSxPEc6QA", { audioonly: true });
-      const dispatcher = connnection.playStream(stream);
-    });
+bot.on("guildMemberAdd", member => {
+member.guild.fetchInvites().then(guildInvites => {
+const gamer = invites[member.guild.id];
+invites[member.guild.id] = guildInvites;
+const invite = guildInvites.find(i => gamer.get(i.code).uses < i.uses);
+const inviter = client.users.get(invite.inviter.id);
+const channel = member.guild.channels.find("name","༄𝐈𝐍𝐕𝐈𝐓𝐄༄");
+channel.send(
+ `__**[<@${member.id}>] **|invite kra la layan** | [<@${inviter.id}>] | **Zhmaray henan** |${invite.uses}**__`
+);
+});
+});
 
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
