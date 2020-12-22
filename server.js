@@ -389,18 +389,18 @@ bot.on("message" , function (message) {
 ///////////
 
 
-bot.on("guildMemberAdd", member => {
-member.guild.fetchInvites().then(guildInvites => {
-const gamer = invites[member.guild.id];
-invites[member.guild.id] = guildInvites;
-const invite = guildInvites.find(i => gamer.get(i.code).uses < i.uses);
-const inviter = client.users.get(invite.inviter.id);
-const channel = member.guild.channels.find("name","༄𝐈𝐍𝐕𝐈𝐓𝐄༄");
-channel.send(
- `__**[<@${member.id}>] **|invite kra la layan** | [<@${inviter.id}>] | **Zhmaray henan** |${invite.uses}**__`
-);
-});
-});
+bot.on('message', black => {
+  if (black.content.startsWith(prefix + "all server")) {
+  black.channel.send({
+  embed: new Discord.RichEmbed()
+  
+     .setColor('BLACK')
+     .addField('`Guilds', [client.guilds.size], true)
+     .addField('Users' ,[ ${client.users.size} ]` , true)
+     .setFooter("Creadet by Black Jack")       
+  })
+  }
+  });
 
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
