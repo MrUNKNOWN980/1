@@ -41,6 +41,7 @@ bot.on("message", message => {
 
 .𝙖𝙫𝙖𝙩𝙖𝙧 ✫ .𝙧𝙤𝙡𝙚𝙨 ✫ .𝙙𝙖𝙞𝙡𝙮 ✫ .𝙞𝙣𝙫𝙞𝙩𝙚
 
+.𝘂𝘀𝗲𝗿𝗶𝗻𝗳𝗼 ✫ .
 
 𝙛𝙖𝙚𝙠 ✫  𝙢𝙚𝙢𝙚 ✫ 𝙢𝙪𝙯𝙘 ✫ 𝙨𝙚𝙨𝙩𝙖𝙢
 
@@ -372,6 +373,20 @@ const embed = new Discord.RichEmbed()
 message.channel.send(embed);
 }
 })
+
+bot.on("message" , function (message) {
+              let args = message.content.trim().split(/ +/g)
+                 if (args[0].toLowerCase() === prefix + "blacklist") {
+              
+              const embed = new Discord.RichEmbed()
+              .setTitle("Blacklist")
+              .setDescription("**SecurityBot n'a trouvé aucun utilisateur dans la blacklist.**")
+              .setFooter("Crée par Ardahel#6518")
+              .setColor("RANDOM")
+              message.channel.send(embed)
+              }
+              })
+
 
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
