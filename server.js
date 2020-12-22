@@ -355,5 +355,23 @@ bot.on("message", msg => {
   }
 });
 
+bot.on("message" , function (message) {
+  let args = message.content.trim().split(/ +/g)
+     if (args[0].toLowerCase() === prefix + "userinfo") { 
+
+const embed = new Discord.RichEmbed()
+.setTitle(`${message.author.username} Profile`)
+.setColor("RANDOM")
+.setThumbnail(message.author.avatarURL)
+.addField(":id: **ID**", message.author.id, true)
+.addField("**Tag**", message.author.tag, true)
+.addField(":clock9: **Created**", `${message.author.createdAt}`, true)
+.addField(":robot: **C'est un bot?**", message.author.bot, true)
+.addField("**Status**", message.author.presence.status, true);
+
+message.channel.send(embed);
+}
+})
+
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
