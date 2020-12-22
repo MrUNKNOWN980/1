@@ -388,19 +388,56 @@ bot.on("message" , function (message) {
               })
 ///////////
 
+ bot.on('typingStart', (ch, user) => {
+    if(user.presence.status === 'offline') {
+        
+        ch.send(`${user} هاهاهاا , كشفتك وانت تكتب ي اوف لاين`)
+        .then(msg => {
+            msg.delete(10000)
+        })
+    }
+}); 
 
-bot.on('message', black => {
-  if (black.content.startsWith(prefix + "all server")) {
-  black.channel.send({
-  embed: new Discord.RichEmbed()
-  
-     .setColor('BLACK')
-     .addField('`Guilds', [client.guilds.size], true)
-     .addField('Users' ,[ ${client.users.size} ]` , true)
-     .setFooter("Creadet by Black Jack")       
-  })
-  }
-  });
+
+bot.on('message', async message => {
+            if(message.content.includes('@everyone')){
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
+        if(!message.channel.guild) return;
+        message.delete()
+          var command = message.content.split(" ")[0];
+    let muterole = message.guild.roles.find(`name`, "Muted");
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "Muted",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("Muted Ads")
+            .addField(`**  You Have Been Muted **` , `**Reason : Sharing Another Discord Link**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+        .setFooter(`${message.guild.name} `)
+     message.channel.send(embed500)
+     message.author.send('` تۆ میوتکرای بەھۆی لێدانی ئێڤریوەن`');
+ 
+ 
+    }
+})
 
 
 bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
