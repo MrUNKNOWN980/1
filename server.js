@@ -391,7 +391,7 @@ bot.on("message" , function (message) {
  bot.on('typingStart', (ch, user) => {
     if(user.presence.status === 'offline') {
         
-        ch.send(`${user} هاهاهاا , كشفتك وانت تكتب ي اوف لاين`)
+        ch.send(`${user}  𝐗𝐎𝐓 𝐎𝐍𝐋𝐀𝐘𝐍𝐊𝐀  𝐃𝐋𝐀𝐊𝐀𝐌 😅😅`)
         .then(msg => {
             msg.delete(10000)
         })
