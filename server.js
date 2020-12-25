@@ -20,7 +20,7 @@ const prefix = ".";
 
 const queue = new Map();
 
-client.on('message', function(message) {
+bot.on('message', function(message) {
   if (message.content.toLowerCase() ===prefix + "help") {
       
     let embed = new Discord.RichEmbed()
