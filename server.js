@@ -20,34 +20,43 @@ const prefix = ".";
 
 const queue = new Map();
 
-bot.on("ready", () => console.log("🤖Ready Bot In Online🤖"));
-
-bot.on("message", message => {
-  if (message.content === ".help") {
-    const embed = new Discord.RichEmbed()
-      .setColor("BLACK")
-       .setFooter(message.author.username, message.author.displayAvatarURL)
+client.on('message', function(message) {
+  if (message.content.toLowerCase() ===prefix + "help") {
+      
+    let embed = new Discord.RichEmbed()
+    .setFooter(message.author.username, message.author.displayAvatarURL)
      .setThumbnail(message.author.displayAvatarURL)
-      .setDescription(`**COMAND HELP MENU**
-
-
-**The prefix for the bot is: . **
-
-**==============================**
-
-.𝙡𝙪𝙘𝙠 ✫ .𝙪𝙣𝙡𝙤𝙘𝙠 ✫ .𝙗𝙤𝙩 ✫ .𝙢𝙚𝙢𝙗𝙖𝙧𝙚𝙨
-
-.𝙗𝙖𝙣 ✫ .𝙠𝙞𝙘𝙠 ✫ .𝙥𝙧𝙤𝙛𝙞𝙡𝙚 ✫ .𝙢𝙪𝙫𝙚𝙖𝙡𝙡
-
-.𝙖𝙫𝙖𝙩𝙖𝙧 ✫ .𝙧𝙤𝙡𝙚𝙨 ✫ .𝙙𝙖𝙞𝙡𝙮 ✫ .𝙞𝙣𝙫𝙞𝙩𝙚
-
-.𝘂𝘀𝗲𝗿𝗶𝗻𝗳𝗼 ✫ .
-
-𝙛𝙖𝙚𝙠 ✫  𝙢𝙚𝙢𝙚 ✫ 𝙢𝙪𝙯𝙘 ✫ 𝙨𝙚𝙨𝙩𝙖𝙢
-
-
-[support](https://discord.gg/MhV7Yt8)**  -  **[invite](https://discord.com/oauth2/authorize?client_id=759881502355488799&scope=bot&permissions=8)**`)
+    .setColor("RANDOM")
+.setTitle("bot help menu")
+    .setDescription(`the prefix of bot is: ${prefix}
+ 
+  **:shield: __𝘀𝗲𝗰𝘂𝗿𝗶𝘁𝘆__ **
+  /𝗮𝗻𝘁𝗶 𝗯𝗮𝗻 [ 𝗻𝘂𝗺𝗯𝗲𝗿 ]
+  /𝗮𝗻𝘁𝗶 𝗸𝗶𝗰𝗸 [ 𝗻𝘂𝗺𝗯𝗲𝗿 ]
+  /𝗮𝗻𝘁𝗶 𝗿𝗼𝗹𝗲𝗗 [ 𝗻𝘂𝗺𝗯𝗲𝗿 ]
+  /𝗮𝗻𝘁𝗶 𝗿𝗼𝗹𝗲𝗖 [ 𝗻𝘂𝗺𝗯𝗲𝗿 ]
+  /𝗮𝗻𝘁𝗶 𝗰𝗵𝗮𝗻𝗻𝗲𝗹𝗗 [ 𝗻𝘂𝗺𝗯𝗲𝗿 ] 
+  /𝗮𝗻𝘁𝗶 𝗰𝗵𝗮𝗻𝗻𝗲𝗹𝗖 [ 𝗻𝘂𝗺𝗯𝗲𝗿 ] 
+  /𝗮𝗻𝘁𝗶 𝘁𝗶𝗺𝗲 [ 𝗻𝘂𝗺𝗯𝗲𝗿 ]
+  /𝘀𝗲𝘁𝘁𝗶𝗻𝗴𝘀
+ **:gear: __𝗽𝘂𝗯𝗹𝗶𝗰 __** 
+  /𝗶𝗻𝘃𝗶𝘁𝗲, /𝗽 , /𝗮𝗯𝗼𝘂𝘁, /𝗶𝗻𝗳
+  /𝗯𝗼𝘁𝘀 , /𝗯𝗮𝗻𝘀 , /𝗿𝗼𝗹𝗲𝘀,
+  /𝗲𝗺𝗼𝗷𝗶 , /𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 , /𝗺𝗲𝗺𝗯𝗲𝗿𝘀
+  /𝘂𝘀𝗲𝗿 , /𝗼𝘄𝗻𝗲𝗿 , /𝗽𝗶𝗻𝗴
+  /𝗮𝘃𝗮𝘁𝗮𝗿 , /𝘀𝗲𝗿𝘃𝗲𝗿 , /𝗴𝗶𝗳
+  **:zap: __𝗺𝗼𝗱𝗲𝗿𝗮𝘁𝗶𝗼𝗻__** 
+  /𝗯𝗮𝗻 , /𝘂𝗻𝗯𝗮𝗻{𝗮𝗹𝗹 - 𝗶𝗱}, /𝗸𝗶𝗰𝗸
+  /𝗹𝗼𝗰𝗸 , /𝘂𝗻𝗹𝗼𝗰𝗸 , /𝘀𝗮𝘆 , /𝙨𝙚𝙣𝙙 (𝙬𝙖𝙩)
+  /𝗲𝗺𝗯𝗲𝗱 , /𝘀𝗲𝘁𝗻𝗶𝗰𝗸 , /𝗺𝘃𝗮𝗹𝗹
+  /𝗰𝗹𝗲𝗮𝗿 , /𝗿𝘂𝗹𝗲𝘀, /𝗺𝗼𝘃𝗲 , 𝘀𝗲𝗿𝘃𝗲𝗿𝙗𝙤𝙩
+  /𝗮𝗻𝘁𝗶𝗿𝗲𝗸𝗹𝗮𝗺 𝗼𝗻 , /𝗮𝗻𝘁𝗶𝗿𝗲𝗸𝗹𝗮𝗺 𝗼𝗳𝗳
+**__[ 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 ](https://discord.gg/Fb2VwENJkB)__** - **__[ 𝗜𝗡𝗩𝗜𝗧𝗘 ](https://discord.com/api/oauth2/authorize?client_id=791784505832505344&permissions=8&scope=bot)__**
+`)
+ 
     .setTimestamp()
+    
+    
     message.channel.sendEmbed(embed);
   }
 });
@@ -440,4 +449,4 @@ bot.on('message', async message => {
 })
 
 
-bot.login("Nzg1ODExNjY1ODY5MzQwNzAy.X89SJA.qQp0Ai7oNENuTBr21AVisHTcyFY");
+bot.login("NzkxNzg0NTA1ODMyNTA1MzQ0.X-UMyA.YPMWMrdR9b1SCP3jbwM-CtkAjF4");
